@@ -50,10 +50,10 @@ RUN \
     addgroup --gid "$PGID" "$USER" && \
     adduser --gecos '' --no-create-home --disabled-password --uid "$PUID" --gid "$PGID" "$USER" && \
     cd /var/www/html && \
-    if [ "$TARGET" = "release" ] ; then RELEASE_TAG=$(curl -sX GET "https://api.github.com/repos/InvoiceShelf/InvoiceShelf/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]'); fi && \
+    if [ "$TARGET" = "release" ] ; then RELEASE_TAG=$(curl -sX GET "https://api.github.com/repos/Firesphere/InvoiceShelf/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]'); fi && \
     if [ ! -z "$RELEASE_TAG" ] ; then RELEASE_TAG="$RELEASE_TAG"; fi && \
     if [ -z "$RELEASE_TAG" ] ; then RELEASE_TAG="master"; fi && \
-    git clone https://github.com/InvoiceShelf/InvoiceShelf.git --branch $RELEASE_TAG --single-branch && \
+    git clone https://github.com/Firesphere/InvoiceShelf.git --branch $RELEASE_TAG --single-branch && \
     mv InvoiceShelf/.git/refs/heads/master InvoiceShelf/master || cp InvoiceShelf/.git/HEAD InvoiceShelf/master && \
     mv InvoiceShelf/.git/HEAD InvoiceShelf/HEAD && \
     rm -r InvoiceShelf/.git/* && \
