@@ -74,6 +74,7 @@ if [ -n "$SKIP_PERMISSIONS_CHECKS" ] && [ "${SKIP_PERMISSIONS_CHECKS,,}" = "yes"
 	echo "**** WARNING: Skipping permissions check ****"
 else
 	echo "**** Set Permissions ****"
+  ln -s /data/app/public /var/www/html/InvoiceShelf/public/storage
   chmod 775 /var/www/html/InvoiceShelf/storage/logs
   chmod 775 /var/www/html/InvoiceShelf/storage/framework
   chmod 775 /var/www/html/InvoiceShelf/storage/cache
