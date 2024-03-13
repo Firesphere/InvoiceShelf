@@ -1,7 +1,7 @@
 FROM debian:bookworm-slim as base
 
 # Set version label
-LABEL maintainer="invoiceshelf"
+LABEL maintainer="Firesphere"
 
 # Environment variables
 ENV PUID='1000'
@@ -37,6 +37,7 @@ RUN \
     php8.2-intl \
     php8.2-curl \
     curl \
+    vim \
     git \
     jpegoptim \
     optipng \
