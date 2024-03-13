@@ -95,7 +95,7 @@ FROM base
 COPY --from=static_builder --chown=www-data:www-data /app/public /var/www/html/InvoiceShelf/public
 
 # Add custom Nginx configuration
-COPY default.conf /etc/nginx/nginx.conf
+COPY ./docker/default.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 VOLUME /conf /data
