@@ -369,7 +369,7 @@ class Payment extends Model implements HasMedia
 
         \App::setLocale($locale);
 
-        $logo = $company->logo_path;
+        $logo = $company->logo;
 
         view()->share([
             'payment' => $this,
