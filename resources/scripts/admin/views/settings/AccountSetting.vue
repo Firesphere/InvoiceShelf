@@ -76,6 +76,7 @@
             label="name"
             value-prop="code"
             track-by="name"
+            :searchable="true"
             open-direction="top"
           />
         </BaseInputGroup>
